@@ -1,0 +1,21 @@
+
+{
+  "family": "bot-scalping-task",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "256",
+  "memory": "512",
+  "containerDefinitions": [
+    {
+      "name": "bot-scalping",
+      "image": "public.ecr.aws/my-repo/melano-scalping-bot:latest",
+      "portMappings": [
+        {
+          "containerPort": 80,
+          "protocol": "tcp"
+        }
+      ],
+      "essential": true
+    }
+  ]
+}
